@@ -279,6 +279,55 @@
             color: #fff;
           }
           
+          /* Mobile responsive filters */
+          @media (max-width: 768px) {
+            section.upcoming-meetings .filters {
+              margin-bottom: 30px;
+              padding: 0 15px;
+            }
+            
+            section.upcoming-meetings .filters ul {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 8px;
+              align-items: center;
+            }
+            
+            section.upcoming-meetings .filters li {
+              font-size: 11px;
+              padding: 8px 20px;
+              margin: 0;
+              flex: 0 0 auto;
+              min-width: 100px;
+              text-align: center;
+            }
+          }
+          
+          @media (max-width: 480px) {
+            section.upcoming-meetings .filters {
+              padding: 0 10px;
+            }
+            
+            section.upcoming-meetings .filters ul {
+              gap: 6px;
+            }
+            
+            section.upcoming-meetings .filters li {
+              font-size: 10px;
+              padding: 8px 15px;
+              min-width: 90px;
+            }
+          }
+          
+          @media (max-width: 360px) {
+            section.upcoming-meetings .filters li {
+              font-size: 9px;
+              padding: 7px 12px;
+              min-width: 80px;
+            }
+          }
+          
           /* Grid layout for events */
           section.upcoming-meetings .grid {
             margin: 0 -15px;
