@@ -764,9 +764,18 @@
 <style>
 /* Owl Carousel Items */
 .owl-courses-item .item {
+  display: flex;
+  flex-direction: column;
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.owl-courses-item .item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
 
 .owl-courses-item .item:hover {
@@ -776,10 +785,14 @@
 
 /* Down content styling */
 .owl-courses-item .down-content {
+  flex: 1;
   background: rgba(255, 255, 255, 0.95);
   padding: 20px;
   text-align: center;
   transition: background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .owl-courses-item .down-content h4 {
@@ -793,6 +806,7 @@
   font-size: 0.95rem;
   color: #555;
   line-height: 1.4;
+  margin-bottom: 0;
 }
 
 /* Section heading */
@@ -811,68 +825,271 @@
 </style>
 
 
-<section class="our-facts" style="background-color: #111; padding: 80px 0; color: #f0f0f0;">
+<section class="our-facts" style="background: radial-gradient(circle at top, #1f1f1f, #0a0a0a); padding: 80px 0; color: #f0f0f0;">
   <div class="container">
     <div class="row align-items-center">
       
       <!-- Facts Section -->
       <div class="col-lg-6 mb-5 mb-lg-0">
-        <div class="row">
-          <div class="col-lg-12 mb-4">
-            <h2 style="color: #fff; font-weight: 700; font-size: 2.5rem;">
-              A Few Facts About Serima High School
-            </h2>
+        <span class="fact-badge">Proudly Catholic & Mission-Driven</span>
+        <h2 class="fact-heading">A Few Facts About Serima High School</h2>
+        <p class="fact-text">
+          Academic excellence meets spiritual formation at Serima. Our community of students, teachers, and alumni continue to raise the bar through discipline, innovation, and service.
+        </p>
+
+        <div class="fact-grid">
+          <div class="fact-card">
+            <div class="fact-icon">
+              <i class="fa fa-graduation-cap"></i>
+            </div>
+            <div>
+              <div class="fact-number">94%</div>
+              <div class="fact-label">Successful Students</div>
+            </div>
           </div>
 
-          <div class="col-lg-6">
-            <div class="text-center mb-4">
-              <div class="count-digit" style="font-size: 3rem; font-weight: 700; color: #FFD700;">94%</div>
-              <div class="count-title" style="font-size: 1.1rem;">Successful Students</div>
+          <div class="fact-card">
+            <div class="fact-icon">
+              <i class="fa fa-users"></i>
             </div>
-            <div class="text-center">
-              <div class="count-digit" style="font-size: 3rem; font-weight: 700; color: #FFD700;">126</div>
-              <div class="count-title" style="font-size: 1.1rem;">Current Teachers</div>
+            <div>
+              <div class="fact-number">126</div>
+              <div class="fact-label">Dedicated Teachers</div>
             </div>
           </div>
 
-          <div class="col-lg-6">
-            <div class="text-center mb-4">
-              <div class="count-digit" style="font-size: 3rem; font-weight: 700; color: #FFD700;">2345</div>
-              <div class="count-title" style="font-size: 1.1rem;">New Students</div>
+          <div class="fact-card">
+            <div class="fact-icon">
+              <i class="fa fa-child"></i>
             </div>
-            <div class="text-center">
-              <div class="count-digit" style="font-size: 3rem; font-weight: 700; color: #FFD700;">32</div>
-              <div class="count-title" style="font-size: 1.1rem;">Awards Won</div>
+            <div>
+              <div class="fact-number">2345</div>
+              <div class="fact-label">Students Enrolled</div>
+            </div>
+          </div>
+
+          <div class="fact-card">
+            <div class="fact-icon">
+              <i class="fa fa-trophy"></i>
+            </div>
+            <div>
+              <div class="fact-number">32</div>
+              <div class="fact-label">Awards Won</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Local Video Section -->
-      <div class="col-lg-6 text-center">
-        <div class="video-container" style="
-          position: relative;
-          width: 100%;
-          max-width: 640px;
-          height: 360px;
-          margin: 0 auto;
-          border-radius: 15px;
-          overflow: hidden;
-          box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-        ">
-          <video controls poster="assets/images/video-cover.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-            <source src="assets/videos/school-life.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+      <!-- Video Section -->
+      <div class="col-lg-6">
+        <div class="video-wrapper video-overlay-preview">
+          <div class="video-preview" style="background-image: url('assets/images/video-cover.jpg');"></div>
+          <div class="video-overlay-content">
+            <div>
+              <span>Official School Story</span>
+              <h4>Experience Serima High School</h4>
+              <p>Open the video on YouTube to watch highlights from our mission-driven campus life.</p>
+              <a href="https://www.youtube.com/watch?v=jVkIN3UmlPc" target="_blank" rel="noopener" class="video-button">
+                <i class="fa fa-youtube-play"></i> Watch on YouTube
+              </a>
+            </div>
+          </div>
         </div>
-        <p style="color: #f0f0f0; margin-top: 15px; font-size: 1rem;">
-          Watch a glimpse of our vibrant school life and activities.
+        <p class="video-caption">
+          Some videos require YouTube playback for copyright reasons. Tap the button to watch the full feature.
         </p>
       </div>
 
     </div>
   </div>
 </section>
+
+<style>
+.fact-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba(255, 215, 0, 0.1);
+  color: #ffd700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.fact-heading {
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.fact-text {
+  color: #d6d6d6;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.fact-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.fact-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 215, 0, 0.5);
+}
+
+.fact-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(255, 215, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffd700;
+  font-size: 1.4rem;
+}
+
+.fact-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffd700;
+  line-height: 1.1;
+}
+
+.fact-label {
+  font-size: 0.95rem;
+  color: #d2d2d2;
+  letter-spacing: 0.02em;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-overlay-preview {
+  display: flex;
+  align-items: stretch;
+  background: #050505;
+}
+
+.video-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5);
+}
+
+.video-overlay-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  color: #fff;
+  background: linear-gradient(120deg, rgba(5,5,5,0.8), rgba(5,5,5,0.4));
+}
+
+.video-overlay-content span {
+  display: inline-block;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: #ffd700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.video-overlay-content h4 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.video-overlay-content p {
+  font-size: 1rem;
+  color: #dcdcdc;
+  margin-bottom: 20px;
+}
+
+.video-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ff1f1f;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.video-button i {
+  font-size: 1.2rem;
+}
+
+.video-button:hover {
+  background: #ff4d4d;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.video-caption {
+  color: #dcdcdc;
+  font-size: 1rem;
+  margin-top: 18px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .fact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fact-heading {
+    font-size: 2rem;
+  }
+}
+</style>
 
 
 <section class="leadership" id="leadership" style="background-color: #1a1a1a; padding: 80px 0; color: #f0f0f0;">
